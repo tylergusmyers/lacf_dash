@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/tylergusmyers/lacf_dash#readme",
   "dependencies": {
-    "papaparse": "^5.4.1"
+    "papaparse": "^5.4.1",
+    "d3": "^6.7.0"
+
   }
 }
