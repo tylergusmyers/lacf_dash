@@ -1,0 +1,22 @@
+{
+  "name": "lacf_dash",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tylergusmyers/lacf_dash.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tylergusmyers/lacf_dash/issues"
+  },
+  "homepage": "https://github.com/tylergusmyers/lacf_dash#readme",
+  "dependencies": {
+    "papaparse": "^5.4.1"
+  }
+}

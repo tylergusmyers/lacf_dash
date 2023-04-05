@@ -1,25 +1,29 @@
 import { useState } from 'react'
 import './App.css'
 import './lacf.csv' 
-import * as d3 from 'd3';
+import Papa from 'papaparse';
 
 
 
 function App() {
   const [val, setVal] = useState(0)
-  d3.csv(csvData, function(error, data) {
-    if (error) {
-      console.error('Error loading CSV data:', error);
-      return;
-    }
-    const limitedData = data.slice(0, 10);
-    console.log(limitedData);
-    const maxValue = d3.max(limitedData, function(d) {
-      return +d.value;
-    });
+  Papa.parse(csvData, {
+    header: true,
+    complete: function(results) {
+      const data = results.data;
 
-    console.log('Max value:', maxValue);
-  });
+      // Log the data to the console
+      console.log(data);
+
+      // Use PapaParse to manipulate the data
+      const maxValue = Papa.unparse(data).split('\n').map(row => row.split(',')[1]).slice(1).map(Number).reduce((a, b) => Math.max(a, b));
+
+      console.log('Max value:', maxValue);
+    },
+    error: function(error) {
+      console.error('Error loading CSV data:', error);
+    }
+  })
 
   return (
     <div className="App">
